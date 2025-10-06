@@ -1,0 +1,29 @@
+<nav class="uk-navbar-container uk-background-muted" uk-navbar>
+  <div class="uk-navbar-left">
+    
+    <a class="uk-navbar-item uk-logo uk-hidden@s" (click)="goHome()">ApiArticle</a>
+  </div>
+
+  <div class="uk-navbar-center">
+    <a class="uk-navbar-item uk-logo header-title" (click)="goHome()">
+      <span class="brand-main">Api</span><span class="brand-accent">Article</span>
+    </a>
+  </div>
+
+  <div class="uk-navbar-right">
+  <div *ngIf="pseudo" class="user-area" (mouseenter)="showMenu = true" (mouseleave)="showMenu = false">
+        <a class="uk-button uk-button-text user-pseudo">{{ pseudo }}</a>
+        <div class="user-drop" *ngIf="showMenu">
+        <div class="uk-card uk-card-default uk-card-body uk-width-medium">
+          <p class="uk-text-bold">{{ pseudo }}</p>
+          <p class="uk-text-small">{{ email }}</p>
+          <p class="uk-text-small">Ville: {{ city || '—' }}</p>
+          <p class="uk-text-right uk-margin-remove-top">
+            <button class="uk-button uk-button-default" (click)="logout()">Déconnexion</button>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</nav>

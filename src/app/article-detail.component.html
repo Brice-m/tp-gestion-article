@@ -1,0 +1,30 @@
+<div class="uk-section">
+  <div class="uk-container">
+    <button class="uk-button uk-button-text" (click)="back()">← Retour</button>
+  <div *ngIf="article" class="uk-card uk-card-default uk-card-body uk-margin-top">
+      <div class="uk-flex uk-flex-between">
+        <div>
+          <h1 *ngIf="!editMode">{{ article.title }}</h1>
+          <div *ngIf="editMode">
+            <input class="uk-input" [(ngModel)]="article.title" name="title" />
+          </div>
+              <p class="uk-text-meta">Par <span *ngIf="!editMode">{{ article.author }}</span>
+                <input *ngIf="editMode" class="uk-input" style="display:inline-block; width:auto;" [(ngModel)]="article!.author" name="author" />
+          </p>
+        </div>
+        <div>
+              <button *ngIf="!editMode" class="uk-button uk-button-yellow" (click)="toggleEdit()">Modifier</button>
+              <button *ngIf="editMode" class="uk-button uk-button-yellow" (click)="save()">Enregistrer</button>
+          <button class="uk-button uk-button-danger" (click)="remove()">Supprimer</button>
+        </div>
+      </div>
+      <div>
+        <img [src]="article.imgPath" alt="" style="width:100%; max-height:400px; object-fit:cover" />
+      </div>
+      <div class="uk-margin-top">
+  <p *ngIf="!editMode">{{ article.desc }}</p>
+  <textarea *ngIf="editMode" class="uk-textarea" [(ngModel)]="article!.desc" name="desc"></textarea>
+      </div>
+    </div>
+  </div>
+</div>
