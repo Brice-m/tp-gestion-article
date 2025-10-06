@@ -1,36 +1,35 @@
 ﻿# tp-gestion-article
 
-Frontend (student-friendly)
+Frontend
 
-Simple Angular frontend for the ApiArticle project.
+Ce dépôt contient uniquement la partie frontend Angular du projet ApiArticle.
 
-Notes for students:
-- Source templates in `src/app` use `@if` / `@for` markers (this is an educational convenience).
-- The build process temporarily converts `@if/@for` back to Angular `*ngIf/*ngFor` before compiling, then restores the originals. Use `npm run build` to run this whole workflow.
+Prise en main rapide
 
-Quick start
-
-1. Install dependencies:
+1) Installer les dépendances
 
 ```powershell
 npm install
 ```
 
-2. Build the app (transforms templates -> builds -> restores originals):
+2) Construire l'application (transformation des templates -> compilation -> restauration des sources)
 
 ```powershell
 npm run build
 ```
 
-3. (Optional) Serve during development:
+3) Développement (optionnel)
 
-If you prefer `ng serve`, run the transform first so templates are valid for the dev server:
+Si vous voulez utiliser le serveur de développement `ng serve`, lancez d'abord la transformation afin que les templates soient valides pour Angular :
 
 ```powershell
 node ./scripts/transform-to-angular.js
 ng serve
-# when done, restore originals:
+# Quand vous avez terminé, restaurez les fichiers originaux :
 node ./scripts/restore-originals.js
 ```
 
-That's it — commit and push to your remote repo when ready.
+Licence
+- Aucun fichier de licence n'est fourni ici. Ajoutez un fichier LICENSE si nécessaire.
+
+Bonne continuation !
